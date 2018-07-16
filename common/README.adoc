@@ -74,3 +74,15 @@ Then, you can override the build function in `common/src/main/bash/projectType/p
 with your own without re-writing all the logic up to that point. Here is an
 https://github.com/pivotalservices/pcf-apptx-pipelines/tree/spike-150749835/common/src/main/bash/apptx[example]
 and a https://github.com/malston/github-webhook/blob/spike-150749835/ci/pipeline.yml[pipeline] that uses it.
+
+== Scripts documentation
+
+```bash
+$ push to directory
+$ ../../../../build/zsd/bin/zsd --cignore '\#*FUNCTION:*{{{*' *.sh && pushd projectType && ../../../../../build/zsd/bin/zsd --cignore '\#*FUNCTION:*{{{*' *.sh && popd
+```
+
+TODO:
+
+- build script docs automatically from gradle
+- include all docs here

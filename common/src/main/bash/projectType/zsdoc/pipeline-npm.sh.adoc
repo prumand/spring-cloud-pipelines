@@ -1,0 +1,178 @@
+pipeline-npm.sh(1)
+==================
+:compat-mode!:
+
+NAME
+----
+pipeline-npm.sh - a shell script
+
+SYNOPSIS
+--------
+Documentation automatically generated with `zshelldoc'
+
+FUNCTIONS
+---------
+
+ build
+ downloadAppBinary
+ downloadNpmIfMissing
+ executeApiCompatibilityCheck
+ installNodeIfMissing
+ outputFolder
+ projectType
+ retrieveAppName
+ retrieveGroupId
+ runE2eTests
+ runSmokeTests
+ testResultsAntPattern
+
+DETAILS
+-------
+
+Script Body
+~~~~~~~~~~~
+
+Has 15 line(s). No functions are called (may attach to Zle or do hooks, etc.).
+
+build
+~~~~~
+
+____
+ # ---- BUILD PHASE ----
+____
+
+Has 3 line(s). Calls functions:
+
+ build
+ `-- downloadNpmIfMissing
+     `-- installNodeIfMissing
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+downloadAppBinary
+~~~~~~~~~~~~~~~~~
+
+Has 2 line(s). Doesn't call other functions.
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+downloadNpmIfMissing
+~~~~~~~~~~~~~~~~~~~~
+
+____
+ # ---- NPM SPECIFIC ----
+____
+
+Has 6 line(s). Calls functions:
+
+ downloadNpmIfMissing
+ `-- installNodeIfMissing
+
+Called by:
+
+ build
+ executeApiCompatibilityCheck
+ retrieveAppName
+ retrieveGroupId
+ runE2eTests
+ runSmokeTests
+
+executeApiCompatibilityCheck
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+Has 2 line(s). Calls functions:
+
+ executeApiCompatibilityCheck
+ `-- downloadNpmIfMissing
+     `-- installNodeIfMissing
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+installNodeIfMissing
+~~~~~~~~~~~~~~~~~~~~
+
+Has 7 line(s). Doesn't call other functions.
+
+Uses feature(s): _export_
+
+Called by:
+
+ downloadNpmIfMissing
+
+outputFolder
+~~~~~~~~~~~~
+
+Has 1 line(s). Doesn't call other functions.
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+projectType
+~~~~~~~~~~~
+
+____
+ # ---- COMMON ----
+____
+
+Has 1 line(s). Doesn't call other functions.
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+retrieveAppName
+~~~~~~~~~~~~~~~
+
+Has 6 line(s). Calls functions:
+
+ retrieveAppName
+ `-- downloadNpmIfMissing
+     `-- installNodeIfMissing
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+retrieveGroupId
+~~~~~~~~~~~~~~~
+
+Has 2 line(s). Calls functions:
+
+ retrieveGroupId
+ `-- downloadNpmIfMissing
+     `-- installNodeIfMissing
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+runE2eTests
+~~~~~~~~~~~
+
+____
+ # ---- STAGE PHASE ----
+____
+
+Has 2 line(s). Calls functions:
+
+ runE2eTests
+ `-- downloadNpmIfMissing
+     `-- installNodeIfMissing
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+runSmokeTests
+~~~~~~~~~~~~~
+
+____
+ # ---- TEST PHASE ----
+____
+
+Has 2 line(s). Calls functions:
+
+ runSmokeTests
+ `-- downloadNpmIfMissing
+     `-- installNodeIfMissing
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+testResultsAntPattern
+~~~~~~~~~~~~~~~~~~~~~
+
+Has 1 line(s). Doesn't call other functions.
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+

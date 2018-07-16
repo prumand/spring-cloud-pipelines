@@ -1,0 +1,69 @@
+pipeline-jvm.sh(1)
+==================
+:compat-mode!:
+
+NAME
+----
+pipeline-jvm.sh - a shell script
+
+SYNOPSIS
+--------
+Documentation automatically generated with `zshelldoc'
+
+FUNCTIONS
+---------
+
+ downloadAppBinary
+ isGradleProject
+ isMavenProject
+ projectType
+
+DETAILS
+-------
+
+Script Body
+~~~~~~~~~~~
+
+Has 19 line(s). No functions are called (may attach to Zle or do hooks, etc.).
+
+downloadAppBinary
+~~~~~~~~~~~~~~~~~
+
+Has 21 line(s). Doesn't call other functions.
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+
+isGradleProject
+~~~~~~~~~~~~~~~
+
+Has 1 line(s). Doesn't call other functions.
+
+Called by:
+
+ projectType
+
+isMavenProject
+~~~~~~~~~~~~~~
+
+Has 1 line(s). Doesn't call other functions.
+
+Called by:
+
+ projectType
+
+projectType
+~~~~~~~~~~~
+
+____
+ # TODO: consider also a project descriptor file
+ # that could override these values
+____
+
+Has 7 line(s). Calls functions:
+
+ projectType
+ |-- isGradleProject
+ `-- isMavenProject
+
+Not called by script or any function, may be a hook or Zle widget, etc.
+

@@ -13,6 +13,33 @@ sourceSets {
 	}
 }
 
+task installZshellDocIfMissing() {
+	doLast {
+		boolean zsdInstalled = isCommandAvailable("zsd -h")
+		exec {
+			if (zsdInstalled) {
+				commandLine "echo", "zsd installed - continuing"
+			} else {
+				logger.lifecycle("zsd is missing. Will try to install it.")
+				commandLine "bash", new File(project.rootDir, "tools/build-helper.sh").path, "install-zsd"
+			}
+		}
+	}
+}
+
+task zsd {
+	doLast {
+		boolean appInstalled = isCommandAvailable("zsd -h")
+		String pathToBin = "zsd"
+		if (!appInstalled) {
+			pathToBin = new File(project.rootProject.buildDir, "zsd/bin/zsd").path
+		}
+		exec {
+			commandLine pathToBin, '-f', 'src/main/bash'
+		}
+	}
+}
+
 installBatsIfMissing.dependsOn("initalizeSubModules")
 bats.dependsOn("installBatsIfMissing")
 test.dependsOn("bats")

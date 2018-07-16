@@ -10,7 +10,7 @@ set -o pipefail
 ROOT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 function usage {
-    echo "usage: $0: <download-shellcheck|download-bats|initialize-submodules>"
+    echo "usage: $0: <download-shellcheck|download-bats|install-zsd|initialize-submodules>"
     exit 1
 }
 
@@ -48,6 +48,15 @@ case $1 in
             exit 0
         fi
         git clone https://github.com/bats-core/bats-core.git "${ROOT_DIR}/../build/bats"
+        ;;
+    install-zsd)
+        if [[ -x "${ROOT_DIR}/../build/zsd/bin/zsd" ]]; then
+            echo "zsd already installed - skipping..."
+            exit 0
+        fi
+        pushd "${ROOT_DIR}/../common/src/test/bats/docs_helper/zshelldoc/"
+        make install PREFIX="${ROOT_DIR}/../build/zsd"
+        popd
         ;;
     initialize-submodules)
         files="$( ls "${ROOT_DIR}/../common/src/test/bats/test_helper/bats-assert/" || echo "" )"
