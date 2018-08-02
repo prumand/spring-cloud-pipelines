@@ -19,6 +19,10 @@ UNZIP_BIN="${UNZIP_BIN:-unzip}"
 # FUNCTION: build {{{
 # Dotnet implementation of the build function.
 function build() {
+	export PROJECT_NAME PROJECT_GROUP PROJECT_VERSION
+	PROJECT_NAME="$(retrieveAppName)"
+	PROJECT_GROUP="$(retrieveGroupId)"
+	PROJECT_VERSION="${PIPELINE_VERSION}"
 	echo "Building"
 	"${DOTNET_BIN}" msbuild /nologo /t:CFPUnitTests
 	echo "Publishing"
